@@ -20,4 +20,38 @@
   export let saveData = "";
   export let immediateLoading = false;
   export let hideInterface = false;
+
+
+  function midPointBtw(p1, p2) {
+      return {
+        x: p1.x + (p2.x - p1.x) / 2,
+        y: p1.y + (p2.y - p1.y) / 2
+      };
+    }
+
+  const canvasStyle = {
+    display: "block",
+    position: "absolute"
+  };
+
+  const canvasTypes = [
+    {
+      name: "interface",
+      zIndex: 15
+    },
+    {
+      name: "drawing",
+      zIndex: 11
+    },
+    {
+      name: "temp",
+      zIndex: 12
+    },
+    {
+      name: "grid",
+      zIndex: 10
+    }
+  ];
+
+
 </script>
