@@ -68,6 +68,7 @@
    let isDrawing = false;
    let isPressing = false;
    let lazy = null;
+   let image = null;
 
   $: {
 
@@ -126,6 +127,68 @@
   onDestroy(() => {
     canvasObserver.unobserve(canvasContainer)
   });
+
+
+
+  let drawImage = () => {
+    if (!imgSrc) return;
+    image = new Image();
+    image.crossOrigin = "anonymous";
+    image.onload = () => drawImage({ ctx: ctx.grid, img: image });
+    image.src = imgSrc;
+  };
+
+  let undo = () => {
+    const lines = lines.slice(0, -1);
+    clear();
+    simulateDrawingLines({ lines, immediate: true });
+    triggerOnChange();
+  };
+
+  let getSaveData = () => {
+    return JSON.stringify({
+      lines: lines,
+      width: canvasWidth,
+      height: canvasHeight
+    });
+  };
+
+  let loadSaveData = (saveData, immediate = immediateLoading) => {
+    if (typeof saveData !== "string") {
+      throw new Error("saveData needs to be of type string!");
+    }
+
+    const { lines, width, height } = JSON.parse(saveData);
+
+    if (!lines || typeof lines.push !== "function") {
+      throw new Error("saveData.lines needs to be an array!");
+    }
+
+    clear();
+
+    if (width === canvasWidth && height === canvasHeight) {
+      simulateDrawingLines({
+        lines,
+        immediate
+      });
+    } else {
+      const scaleX = canvasWidth / width;
+      const scaleY = canvasHeight / height;
+      const scaleAvg = (scaleX + scaleY) / 2;
+
+      simulateDrawingLines({
+        lines: lines.map(line => ({
+          ...line,
+          points: line.points.map(p => ({
+            x: p.x * scaleX,
+            y: p.y * scaleY
+          })),
+          brushRadius: line.brushRadius * scaleAvg
+        })),
+        immediate
+      });
+    }
+  };
 
 
 </script>
