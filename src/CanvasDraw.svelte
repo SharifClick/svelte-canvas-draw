@@ -21,6 +21,7 @@
   export let saveData = "";
   export let immediateLoading = false;
   export let hideInterface = false;
+  export let classes = '';
 
 
   function midPointBtw(p1, p2) {
@@ -69,6 +70,8 @@
    let isPressing = false;
    let lazy = null;
    let image = null;
+
+   let canvasContainer = null;
 
   $: {
 
@@ -515,3 +518,15 @@
 
 
 </script>
+<style>
+  .drwaing-container{
+    display: block;
+    touch-action: none;
+  }
+
+
+</style>
+
+  <div class="drwaing-container {classes}" style="height:{canvasHeight}; width:{canvasWidth}; background-color:{backgroundColor}" bind:this={canvasContainer}>
+
+  </div>
