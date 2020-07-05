@@ -1,4 +1,5 @@
 <script>
+  import { onMount, afterUpdate, onDestroy  } from "svelte";
   import { LazyBrush } from "lazy-brush";
   import { Catenary } from "catenary-curve";
 
@@ -66,5 +67,65 @@
    let valuesChanged = true;
    let isDrawing = false;
    let isPressing = false;
+   let lazy = null;
+
+  $: {
+
+    // Set new lazyRadius values
+      chainLength = lazyRadius * window.devicePixelRatio;
+      lazy.setRadius(lazyRadius * window.devicePixelRatio);
+      loadSaveData(saveData);
+      // Signal loop function that values changed
+      valuesChanged = true;
+
+  }
+
+
+   onMount(() => {
+    lazy = new LazyBrush({
+      radius: lazyRadius * window.devicePixelRatio,
+      enabled: true,
+      initialPoint: {
+        x: window.innerWidth / 2,
+        y: window.innerHeight / 2
+      }
+    });
+    chainLength = lazyRadius * window.devicePixelRatio;
+
+    canvasObserver = new ResizeObserver((entries, observer) =>
+      handleCanvasResize(entries, observer)
+    );
+    canvasObserver.observe(canvasContainer);
+
+    drawImage();
+    loop();
+
+    window.setTimeout(() => {
+      const initX = window.innerWidth / 2;
+      const initY = window.innerHeight / 2;
+      lazy.update(
+        { x: initX - chainLength / 4, y: initY },
+        { both: true }
+      );
+      lazy.update(
+        { x: initX + chainLength / 4, y: initY },
+        { both: false }
+      );
+      mouseHasMoved = true;
+      valuesChanged = true;
+      clear();
+
+      // Load saveData from prop if it exists
+      if (saveData) {
+        loadSaveData(saveData);
+      }
+    }, 100);
+  });
+
+
+  onDestroy(() => {
+    canvasObserver.unobserve(canvasContainer)
+  });
+
 
 </script>
