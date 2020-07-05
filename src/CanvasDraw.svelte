@@ -54,4 +54,17 @@
   ];
 
 
+   let canvas = {};
+   let ctx = {};
+
+   let catenary = new Catenary();
+
+   let points = [];
+   let lines = [];
+
+   let mouseHasMoved = true;
+   let valuesChanged = true;
+   let isDrawing = false;
+   let isPressing = false;
+
 </script>
