@@ -527,6 +527,23 @@
 
 </style>
 
-  <div class="drwaing-container {classes}" style="height:{canvasHeight}; width:{canvasWidth}; background-color:{backgroundColor}" bind:this={canvasContainer}>
-
+  <div
+    class="drwaing-container {classes}"
+    style="height:{canvasHeight}; width:{canvasWidth}; background-color:{backgroundColor}"
+    bind:this={canvasContainer}>
+    {#each canvasTypes as {name, zIndex}}
+      <canvas
+        key={name}
+        style="display:block;position:absolute; z-index:{zIndex}"
+        bind:this={canvas[name]}
+        on:mousedown={name === "interface" ? handleDrawStart : undefined}
+        on:mousemove={name === "interface" ? handleDrawMove : undefined}
+        on:mouseup={name === "interface" ? handleDrawEnd : undefined}
+        on:mouseout={name === "interface" ? handleDrawEnd : undefined}
+        on:touchstart={name === "interface" ? handleDrawStart : undefined}
+        on:touchmove={name === "interface" ? handleDrawMove : undefined}
+        on:touchend={name === "interface" ? handleDrawEnd : undefined}
+        on:touchcancel={name === "interface" ? handleDrawEnd : undefined}
+      />
+    {/each}
   </div>
