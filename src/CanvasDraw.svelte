@@ -14,8 +14,8 @@
   export let gridColor = "rgba(150,150,150,0.17)";
   export let backgroundColor = "#FFF";
   export let hideGrid = false;
-  export let canvasWidth = 400;
-  export let canvasHeight = 400;
+  export let canvasWidth = 800;
+  export let canvasHeight = 800;
   export let disabled = false;
   export let imgSrc = "";
   export let saveData = "";
@@ -77,7 +77,15 @@
 
 
 
+
    onMount(() => {
+
+    Object.keys(canvas).forEach((key) => {
+      ctx[key] = canvas[key].getContext("2d");
+     })
+
+    console.log(ctx)
+
      lazy = new LazyBrush({
        radius: lazyRadius * window.devicePixelRatio,
       enabled: true,
@@ -116,23 +124,25 @@
         loadSaveData(saveData);
       }
     }, 100);
+
   });
 
-  // $: {
 
-  //     // Set new lazyRadius values
-  //       chainLength = lazyRadius * window.devicePixelRatio;
-  //       lazy.setRadius(lazyRadius * window.devicePixelRatio);
-  //       loadSaveData(saveData);
-  //       // Signal loop function that values changed
-  //       valuesChanged = true;
+  // afterUpdate(() => {
+  //   // Set new lazyRadius values
+  //   chainLength = lazyRadius * window.devicePixelRatio;
+  //   lazy.setRadius(lazyRadius * window.devicePixelRatio);
+  //   loadSaveData(saveData);
+  //   // Signal loop function that values changed
+  //   valuesChanged = true;
 
-  //   }
+  // });
 
 
-  onDestroy(() => {
-    canvasObserver.unobserve(canvasContainer)
-  });
+
+  // onDestroy(() => {
+  //   canvasObserver.unobserve(canvasContainer)
+  // });
 
 
 
@@ -160,6 +170,7 @@
   };
 
   let loadSaveData = (saveData, immediate = immediateLoading) => {
+    console.log(saveData)
     if (typeof saveData !== "string") {
       throw new Error("saveData needs to be of type string!");
     }
@@ -281,6 +292,7 @@
   let handleCanvasResize = (entries, observer) => {
     const saveData = getSaveData();
     for (const entry of entries) {
+      console.log(entry)
       const { width, height } = entry.contentRect;
       setCanvasSize(canvas.interface, width, height);
       setCanvasSize(canvas.drawing, width, height);
@@ -502,12 +514,12 @@
       ctx.lineCap = "round";
       ctx.setLineDash([2, 4]);
       ctx.strokeStyle = catenaryColor;
-      catenary.drawToCanvas(
-        ctx.interface,
-        brush,
-        pointer,
-        chainLength
-      );
+      // catenary.drawToCanvas(
+      //   ctx.interface,
+      //   brush,
+      //   pointer,
+      //   chainLength
+      // );
       ctx.stroke();
     }
 
@@ -532,7 +544,7 @@
 
   <div
     class="drwaing-container {classes}"
-    style="height:{canvasHeight}; width:{canvasWidth}; background-color:{backgroundColor}"
+    style="height:{canvasHeight}px; width:{canvasWidth}px; background-color:{backgroundColor}"
     bind:this={canvasContainer}>
     {#each canvasTypes as {name, zIndex}}
       <canvas
