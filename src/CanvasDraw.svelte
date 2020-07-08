@@ -70,24 +70,16 @@
    let isPressing = false;
    let lazy = null;
    let image = null;
+   let chainLength = null;
 
    let canvasContainer = null;
+   let canvasObserver = null;
 
-  $: {
-
-    // Set new lazyRadius values
-      chainLength = lazyRadius * window.devicePixelRatio;
-      lazy.setRadius(lazyRadius * window.devicePixelRatio);
-      loadSaveData(saveData);
-      // Signal loop function that values changed
-      valuesChanged = true;
-
-  }
 
 
    onMount(() => {
-    lazy = new LazyBrush({
-      radius: lazyRadius * window.devicePixelRatio,
+     lazy = new LazyBrush({
+       radius: lazyRadius * window.devicePixelRatio,
       enabled: true,
       initialPoint: {
         x: window.innerWidth / 2,
@@ -125,6 +117,17 @@
       }
     }, 100);
   });
+
+  // $: {
+
+  //     // Set new lazyRadius values
+  //       chainLength = lazyRadius * window.devicePixelRatio;
+  //       lazy.setRadius(lazyRadius * window.devicePixelRatio);
+  //       loadSaveData(saveData);
+  //       // Signal loop function that values changed
+  //       valuesChanged = true;
+
+  //   }
 
 
   onDestroy(() => {
@@ -411,7 +414,7 @@
   //   onChange && onChange(this);
   // };
 
-  clear = () => {
+  let clear = () => {
     lines = [];
     valuesChanged = true;
     ctx.drawing.clearRect(
