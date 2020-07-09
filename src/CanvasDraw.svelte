@@ -128,15 +128,15 @@
   });
 
 
-  // afterUpdate(() => {
-  //   // Set new lazyRadius values
-  //   chainLength = lazyRadius * window.devicePixelRatio;
-  //   lazy.setRadius(lazyRadius * window.devicePixelRatio);
-  //   loadSaveData(saveData);
-  //   // Signal loop function that values changed
-  //   valuesChanged = true;
-
-  // });
+  afterUpdate(() => {
+    // // Set new lazyRadius values
+    // chainLength = lazyRadius * window.devicePixelRatio;
+    // lazy.setRadius(lazyRadius * window.devicePixelRatio);
+    // loadSaveData(saveData);
+    // // Signal loop function that values changed
+    // valuesChanged = true;
+    // drawImage();
+  });
 
 
 
@@ -152,6 +152,7 @@
     image.crossOrigin = "anonymous";
     image.onload = () => drawImage({ ctx: ctx.grid, img: image });
     image.src = imgSrc;
+    console.log(image)
   };
 
   let undo = () => {
