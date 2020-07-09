@@ -1,11 +1,11 @@
 <script>
-  import { onMount, afterUpdate, onDestroy  } from "svelte";
+  import { onMount, afterUpdate, onDestroy, createEventDispatcher  } from "svelte";
+  const dispatch = createEventDispatcher();
   import { LazyBrush } from "lazy-brush";
   import { Catenary } from "catenary-curve";
 
   import ResizeObserver from "resize-observer-polyfill";
 
-  export let onChange = null;
   export let loadTimeOffset = 5;
   export let lazyRadius = 12;
   export let brushRadius = 10;
@@ -14,8 +14,8 @@
   export let gridColor = "rgba(150,150,150,0.17)";
   export let backgroundColor = "#FFF";
   export let hideGrid = false;
-  export let canvasWidth = 800;
-  export let canvasHeight = 800;
+  export let canvasWidth = 400;
+  export let canvasHeight = 400;
   export let disabled = false;
   export let imgSrc = "";
   export let saveData = "";
@@ -422,9 +422,9 @@
     triggerOnChange();
   };
 
-  // let triggerOnChange = () => {
-  //   onChange && onChange(this);
-  // };
+  let triggerOnChange = (event) => {
+    dispatch('change', event);
+  };
 
   let clear = () => {
     lines = [];
