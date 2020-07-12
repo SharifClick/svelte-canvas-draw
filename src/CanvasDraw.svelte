@@ -6,6 +6,8 @@
 
   import ResizeObserver from "resize-observer-polyfill";
 
+  import {drawImageProp} from "./drawingHelpers";
+
   export let loadTimeOffset = 5;
   export let lazyRadius = 12;
   export let brushRadius = 10;
@@ -128,7 +130,7 @@
   });
 
 
-  afterUpdate(() => {
+  // afterUpdate(() => {
     // // Set new lazyRadius values
     // chainLength = lazyRadius * window.devicePixelRatio;
     // lazy.setRadius(lazyRadius * window.devicePixelRatio);
@@ -136,13 +138,13 @@
     // // Signal loop function that values changed
     // valuesChanged = true;
     // drawImage();
-  });
-
-
-
-  // onDestroy(() => {
-  //   canvasObserver.unobserve(canvasContainer)
   // });
+
+
+
+  onDestroy(() => {
+    canvasObserver.unobserve(canvasContainer)
+  });
 
 
 
@@ -150,7 +152,7 @@
     if (!imgSrc) return;
     image = new Image();
     image.crossOrigin = "anonymous";
-    image.onload = () => drawImage({ ctx: ctx.grid, img: image });
+    image.onload = () => drawImageProp({ ctx: ctx.grid, img: image });
     image.src = imgSrc;
     console.log(image)
   };

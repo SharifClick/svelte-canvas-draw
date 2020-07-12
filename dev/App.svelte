@@ -7,15 +7,15 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-2 col-md-offset-5">
-        <CanvasDraw {brushColor} {brushRadius} />
+    <div class="col d-flex justify-content-center">
+        <CanvasDraw {brushColor} {brushRadius} imgSrc="https://upload.wikimedia.org/wikipedia/commons/a/a1/Nepalese_Mhapuja_Mandala.jpg" />
     </div>
   </div>
 
   <div class="row">
     <div class="col">
       <div class="row">
-        <div class="col">
+        <div class="col d-flex justify-content-center">
 
             <div class="form-row align-items-center">
               <div class="col-auto">
