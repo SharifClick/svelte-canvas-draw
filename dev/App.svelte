@@ -2,9 +2,31 @@
   import CanvasDraw from "../src/CanvasDraw.svelte";
   let brushColor = "#444";
   let brushRadius = 10;
-  let bgImage = true;
+  let bgImage = './images/cat.png';
+  let imgBase64 = null;
 
 
+  function setUploadedImage(e){
+
+    // console.log(fileUploader.files)
+    console.log(e.target.files[0])
+
+    if(e.target.files[0]) {
+        let reader = new FileReader();
+        reader.readAsDataURL(e.target.files[0]);
+        console.log(reader.result)
+        reader.onload = (ev) => {
+          // console.log(ev.target.result)
+        // imgBase64 = reader.result;
+        imgBase64 = ev.target.result;
+        setBgImage()
+      }
+    }
+  }
+
+  function setBgImage(){
+    bgImage = imgBase64;
+  }
 
 </script>
 
@@ -49,7 +71,7 @@
   </div>
   <div class="row">
     <div class="col d-flex justify-content-center">
-        <CanvasDraw {brushColor} {brushRadius} imgSrc='./images/cat.png' canvasWidth="640"/>
+        <CanvasDraw {brushColor} {brushRadius} imgSrc={bgImage} canvasWidth="640"/>
     </div>
   </div>
 
@@ -66,6 +88,10 @@
               <div class="col-auto">
                  <label>Brush Radius</label>
                   <input type="number" bind:value={brushRadius} />
+              </div>
+              <div class="col-auto">
+                 <label>File Upload</label>
+                  <input type="file"  on:change={setUploadedImage}/>
               </div>
             </div>
         </div>
