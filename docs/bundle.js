@@ -2160,29 +2160,29 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[56] = list[i].name;
-    	child_ctx[57] = list[i].zIndex;
+    	child_ctx[58] = list[i].name;
+    	child_ctx[59] = list[i].zIndex;
     	return child_ctx;
     }
 
-    // (559:4) {#each canvasTypes as {name, zIndex}}
+    // (581:4) {#each canvasTypes as {name, zIndex}}
     function create_each_block(ctx) {
     	let canvas_1;
     	let canvas_1_key_value;
-    	let name = /*name*/ ctx[56];
+    	let name = /*name*/ ctx[58];
     	let mounted;
     	let dispose;
-    	const assign_canvas_1 = () => /*canvas_1_binding*/ ctx[24](canvas_1, name);
-    	const unassign_canvas_1 = () => /*canvas_1_binding*/ ctx[24](null, name);
+    	const assign_canvas_1 = () => /*canvas_1_binding*/ ctx[25](canvas_1, name);
+    	const unassign_canvas_1 = () => /*canvas_1_binding*/ ctx[25](null, name);
 
     	const block = {
     		c: function create() {
     			canvas_1 = element("canvas");
-    			attr_dev(canvas_1, "key", canvas_1_key_value = /*name*/ ctx[56]);
+    			attr_dev(canvas_1, "key", canvas_1_key_value = /*name*/ ctx[58]);
     			set_style(canvas_1, "display", "block");
     			set_style(canvas_1, "position", "absolute");
-    			set_style(canvas_1, "z-index", /*zIndex*/ ctx[57]);
-    			add_location(canvas_1, file, 559, 6, 13445);
+    			set_style(canvas_1, "z-index", /*zIndex*/ ctx[59]);
+    			add_location(canvas_1, file, 581, 6, 13978);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, canvas_1, anchor);
@@ -2193,7 +2193,7 @@ var app = (function () {
     					listen_dev(
     						canvas_1,
     						"mousedown",
-    						/*name*/ ctx[56] === "interface"
+    						/*name*/ ctx[58] === "interface"
     						? /*handleDrawStart*/ ctx[7]
     						: undefined,
     						false,
@@ -2203,7 +2203,7 @@ var app = (function () {
     					listen_dev(
     						canvas_1,
     						"mousemove",
-    						/*name*/ ctx[56] === "interface"
+    						/*name*/ ctx[58] === "interface"
     						? /*handleDrawMove*/ ctx[8]
     						: undefined,
     						false,
@@ -2213,7 +2213,7 @@ var app = (function () {
     					listen_dev(
     						canvas_1,
     						"mouseup",
-    						/*name*/ ctx[56] === "interface"
+    						/*name*/ ctx[58] === "interface"
     						? /*handleDrawEnd*/ ctx[9]
     						: undefined,
     						false,
@@ -2223,7 +2223,7 @@ var app = (function () {
     					listen_dev(
     						canvas_1,
     						"mouseout",
-    						/*name*/ ctx[56] === "interface"
+    						/*name*/ ctx[58] === "interface"
     						? /*handleDrawEnd*/ ctx[9]
     						: undefined,
     						false,
@@ -2233,7 +2233,7 @@ var app = (function () {
     					listen_dev(
     						canvas_1,
     						"touchstart",
-    						/*name*/ ctx[56] === "interface"
+    						/*name*/ ctx[58] === "interface"
     						? /*handleDrawStart*/ ctx[7]
     						: undefined,
     						false,
@@ -2243,7 +2243,7 @@ var app = (function () {
     					listen_dev(
     						canvas_1,
     						"touchmove",
-    						/*name*/ ctx[56] === "interface"
+    						/*name*/ ctx[58] === "interface"
     						? /*handleDrawMove*/ ctx[8]
     						: undefined,
     						false,
@@ -2253,7 +2253,7 @@ var app = (function () {
     					listen_dev(
     						canvas_1,
     						"touchend",
-    						/*name*/ ctx[56] === "interface"
+    						/*name*/ ctx[58] === "interface"
     						? /*handleDrawEnd*/ ctx[9]
     						: undefined,
     						false,
@@ -2263,7 +2263,7 @@ var app = (function () {
     					listen_dev(
     						canvas_1,
     						"touchcancel",
-    						/*name*/ ctx[56] === "interface"
+    						/*name*/ ctx[58] === "interface"
     						? /*handleDrawEnd*/ ctx[9]
     						: undefined,
     						false,
@@ -2278,9 +2278,9 @@ var app = (function () {
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			if (name !== /*name*/ ctx[56]) {
+    			if (name !== /*name*/ ctx[58]) {
     				unassign_canvas_1();
-    				name = /*name*/ ctx[56];
+    				name = /*name*/ ctx[58];
     				assign_canvas_1();
     			}
     		},
@@ -2296,7 +2296,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(559:4) {#each canvasTypes as {name, zIndex}}",
+    		source: "(581:4) {#each canvasTypes as {name, zIndex}}",
     		ctx
     	});
 
@@ -2326,7 +2326,7 @@ var app = (function () {
     			set_style(div, "height", /*canvasHeight*/ ctx[2] + "px");
     			set_style(div, "width", /*canvasWidth*/ ctx[1] + "px");
     			set_style(div, "background-color", /*backgroundColor*/ ctx[0]);
-    			add_location(div, file, 554, 2, 13219);
+    			add_location(div, file, 576, 2, 13752);
     		},
     		l: function claim(nodes) {
     			throw new Error_1("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2338,7 +2338,7 @@ var app = (function () {
     				each_blocks[i].m(div, null);
     			}
 
-    			/*div_binding*/ ctx[25](div);
+    			/*div_binding*/ ctx[26](div);
     		},
     		p: function update(ctx, dirty) {
     			if (dirty[0] & /*canvasTypes, canvas, handleDrawEnd, handleDrawStart, handleDrawMove*/ 976) {
@@ -2386,7 +2386,7 @@ var app = (function () {
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
     			destroy_each(each_blocks, detaching);
-    			/*div_binding*/ ctx[25](null);
+    			/*div_binding*/ ctx[26](null);
     		}
     	};
 
@@ -2880,6 +2880,29 @@ var app = (function () {
     		undo();
     	}
 
+    	function get_image_data() {
+    		return prepareImageData();
+    	}
+
+    	function prepareImageData() {
+    		var newCanvas = document.createElement("canvas"),
+    			_ctx = newCanvas.getContext("2d"),
+    			width = canvasWidth,
+    			height = canvasHeight;
+
+    		newCanvas.width = width;
+    		newCanvas.height = height;
+
+    		[ctx.grid.canvas, ctx.drawing.canvas].forEach(function (n) {
+    			_ctx.beginPath();
+    			_ctx.drawImage(n, 0, 0, width, height);
+    		});
+
+    		return newCanvas.toDataURL();
+    	}
+
+    	
+
     	const writable_props = [
     		"loadTimeOffset",
     		"lazyRadius",
@@ -3003,7 +3026,9 @@ var app = (function () {
     		drawGrid,
     		drawInterface,
     		clearDrawings,
-    		undoDrawings
+    		undoDrawings,
+    		get_image_data,
+    		prepareImageData
     	});
 
     	$$self.$inject_state = $$props => {
@@ -3087,6 +3112,7 @@ var app = (function () {
     		hideInterface,
     		clearDrawings,
     		undoDrawings,
+    		get_image_data,
     		canvas_1_binding,
     		div_binding
     	];
@@ -3120,7 +3146,8 @@ var app = (function () {
     				hideInterface: 21,
     				classes: 3,
     				clearDrawings: 22,
-    				undoDrawings: 23
+    				undoDrawings: 23,
+    				get_image_data: 24
     			},
     			[-1, -1]
     		);
@@ -3276,6 +3303,14 @@ var app = (function () {
     	set undoDrawings(value) {
     		throw new Error_1("<CanvasDraw>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
+
+    	get get_image_data() {
+    		return this.$$.ctx[24];
+    	}
+
+    	set get_image_data(value) {
+    		throw new Error_1("<CanvasDraw>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
     }
 
     /* dev\App.svelte generated by Svelte v3.24.0 */
@@ -3284,8 +3319,8 @@ var app = (function () {
     const file$1 = "dev\\App.svelte";
 
     function create_fragment$1(ctx) {
+    	let div33;
     	let div32;
-    	let div31;
     	let div11;
     	let div1;
     	let div0;
@@ -3310,7 +3345,7 @@ var app = (function () {
     	let t7;
     	let input1;
     	let t8;
-    	let div30;
+    	let div31;
     	let div13;
     	let div12;
     	let h21;
@@ -3321,11 +3356,11 @@ var app = (function () {
     	let t11;
     	let hr;
     	let t12;
+    	let div30;
     	let div29;
-    	let div28;
+    	let div22;
     	let div21;
     	let div20;
-    	let div19;
     	let div16;
     	let button0;
     	let t14;
@@ -3335,22 +3370,25 @@ var app = (function () {
     	let div18;
     	let button2;
     	let t18;
+    	let div19;
+    	let button3;
+    	let t20;
+    	let div28;
     	let div27;
     	let div26;
-    	let div25;
-    	let div22;
-    	let label2;
-    	let t20;
-    	let input2;
-    	let t21;
     	let div23;
-    	let label3;
+    	let label2;
+    	let t22;
+    	let input2;
     	let t23;
-    	let input3;
-    	let t24;
     	let div24;
-    	let label4;
+    	let label3;
+    	let t25;
+    	let input3;
     	let t26;
+    	let div25;
+    	let label4;
+    	let t28;
     	let input4;
     	let current;
     	let mounted;
@@ -3372,12 +3410,12 @@ var app = (function () {
     	};
 
     	canvasdraw1 = new CanvasDraw({ props: canvasdraw1_props, $$inline: true });
-    	/*canvasdraw1_binding*/ ctx[9](canvasdraw1);
+    	/*canvasdraw1_binding*/ ctx[10](canvasdraw1);
 
     	const block = {
     		c: function create() {
+    			div33 = element("div");
     			div32 = element("div");
-    			div31 = element("div");
     			div11 = element("div");
     			div1 = element("div");
     			div0 = element("div");
@@ -3405,7 +3443,7 @@ var app = (function () {
     			t7 = space();
     			input1 = element("input");
     			t8 = space();
-    			div30 = element("div");
+    			div31 = element("div");
     			div13 = element("div");
     			div12 = element("div");
     			h21 = element("h2");
@@ -3417,11 +3455,11 @@ var app = (function () {
     			t11 = space();
     			hr = element("hr");
     			t12 = space();
+    			div30 = element("div");
     			div29 = element("div");
-    			div28 = element("div");
+    			div22 = element("div");
     			div21 = element("div");
     			div20 = element("div");
-    			div19 = element("div");
     			div16 = element("div");
     			button0 = element("button");
     			button0.textContent = "Clear";
@@ -3434,124 +3472,132 @@ var app = (function () {
     			button2 = element("button");
     			button2.textContent = "Save";
     			t18 = space();
+    			div19 = element("div");
+    			button3 = element("button");
+    			button3.textContent = "Download";
+    			t20 = space();
+    			div28 = element("div");
     			div27 = element("div");
     			div26 = element("div");
-    			div25 = element("div");
-    			div22 = element("div");
+    			div23 = element("div");
     			label2 = element("label");
     			label2.textContent = "Brush Color";
-    			t20 = space();
+    			t22 = space();
     			input2 = element("input");
-    			t21 = space();
-    			div23 = element("div");
+    			t23 = space();
+    			div24 = element("div");
     			label3 = element("label");
     			label3.textContent = "Brush Radius";
-    			t23 = space();
+    			t25 = space();
     			input3 = element("input");
-    			t24 = space();
-    			div24 = element("div");
+    			t26 = space();
+    			div25 = element("div");
     			label4 = element("label");
     			label4.textContent = "File Upload";
-    			t26 = space();
+    			t28 = space();
     			input4 = element("input");
-    			add_location(h20, file$1, 43, 10, 1008);
+    			add_location(h20, file$1, 58, 10, 1457);
     			attr_dev(div0, "class", "col d-flex justify-content-center");
-    			add_location(div0, file$1, 42, 8, 949);
+    			add_location(div0, file$1, 57, 8, 1398);
     			attr_dev(div1, "class", "row");
-    			add_location(div1, file$1, 41, 6, 922);
+    			add_location(div1, file$1, 56, 6, 1371);
     			attr_dev(div2, "class", "col d-flex justify-content-center");
-    			add_location(div2, file$1, 47, 8, 1098);
+    			add_location(div2, file$1, 62, 8, 1547);
     			attr_dev(div3, "class", "row");
-    			add_location(div3, file$1, 46, 6, 1071);
-    			add_location(label0, file$1, 59, 18, 1491);
+    			add_location(div3, file$1, 61, 6, 1520);
+    			add_location(label0, file$1, 74, 18, 1940);
     			attr_dev(input0, "type", "color");
-    			add_location(input0, file$1, 60, 18, 1537);
+    			add_location(input0, file$1, 75, 18, 1986);
     			attr_dev(div4, "class", "col-auto");
-    			add_location(div4, file$1, 58, 16, 1449);
-    			add_location(label1, file$1, 63, 18, 1667);
+    			add_location(div4, file$1, 73, 16, 1898);
+    			add_location(label1, file$1, 78, 18, 2116);
     			attr_dev(input1, "type", "number");
-    			add_location(input1, file$1, 64, 18, 1714);
+    			add_location(input1, file$1, 79, 18, 2163);
     			attr_dev(div5, "class", "col-auto");
-    			add_location(div5, file$1, 62, 16, 1625);
+    			add_location(div5, file$1, 77, 16, 2074);
     			attr_dev(div6, "class", "form-row align-items-center");
-    			add_location(div6, file$1, 57, 14, 1390);
+    			add_location(div6, file$1, 72, 14, 1839);
     			attr_dev(div7, "class", "col d-flex justify-content-center");
-    			add_location(div7, file$1, 55, 12, 1325);
+    			add_location(div7, file$1, 70, 12, 1774);
     			attr_dev(div8, "class", "row");
-    			add_location(div8, file$1, 54, 10, 1294);
+    			add_location(div8, file$1, 69, 10, 1743);
     			attr_dev(div9, "class", "col");
-    			add_location(div9, file$1, 53, 8, 1265);
+    			add_location(div9, file$1, 68, 8, 1714);
     			attr_dev(div10, "class", "row");
-    			add_location(div10, file$1, 52, 6, 1238);
+    			add_location(div10, file$1, 67, 6, 1687);
     			attr_dev(div11, "class", "col");
-    			add_location(div11, file$1, 40, 4, 897);
-    			add_location(h21, file$1, 77, 10, 2009);
+    			add_location(div11, file$1, 55, 4, 1346);
+    			add_location(h21, file$1, 92, 10, 2458);
     			attr_dev(div12, "class", "col d-flex justify-content-center");
-    			add_location(div12, file$1, 76, 8, 1950);
+    			add_location(div12, file$1, 91, 8, 2399);
     			attr_dev(div13, "class", "row");
-    			add_location(div13, file$1, 75, 6, 1923);
+    			add_location(div13, file$1, 90, 6, 2372);
     			attr_dev(div14, "class", "col d-flex justify-content-center");
-    			add_location(div14, file$1, 81, 8, 2113);
+    			add_location(div14, file$1, 96, 8, 2562);
     			attr_dev(div15, "class", "row");
-    			add_location(div15, file$1, 80, 6, 2086);
-    			add_location(hr, file$1, 90, 6, 2369);
+    			add_location(div15, file$1, 95, 6, 2535);
+    			add_location(hr, file$1, 105, 6, 2818);
     			attr_dev(button0, "class", "btn btn-primary");
-    			add_location(button0, file$1, 98, 18, 2634);
+    			add_location(button0, file$1, 113, 18, 3083);
     			attr_dev(div16, "class", "col-auto");
-    			add_location(div16, file$1, 97, 16, 2592);
+    			add_location(div16, file$1, 112, 16, 3041);
     			attr_dev(button1, "class", "btn btn-primary");
-    			add_location(button1, file$1, 101, 18, 2782);
+    			add_location(button1, file$1, 116, 18, 3231);
     			attr_dev(div17, "class", "col-auto");
-    			add_location(div17, file$1, 100, 16, 2740);
+    			add_location(div17, file$1, 115, 16, 3189);
     			attr_dev(button2, "class", "btn btn-primary");
-    			add_location(button2, file$1, 104, 18, 2927);
+    			add_location(button2, file$1, 119, 18, 3376);
     			attr_dev(div18, "class", "col-auto");
-    			add_location(div18, file$1, 103, 16, 2885);
-    			attr_dev(div19, "class", "form-row align-items-center");
-    			add_location(div19, file$1, 96, 14, 2533);
-    			attr_dev(div20, "class", "col d-flex justify-content-center");
-    			add_location(div20, file$1, 94, 12, 2468);
-    			attr_dev(div21, "class", "row");
-    			add_location(div21, file$1, 93, 10, 2437);
-    			add_location(label2, file$1, 114, 18, 3265);
+    			add_location(div18, file$1, 118, 16, 3334);
+    			attr_dev(button3, "class", "btn btn-primary");
+    			add_location(button3, file$1, 122, 18, 3506);
+    			attr_dev(div19, "class", "col-auto");
+    			add_location(div19, file$1, 121, 16, 3463);
+    			attr_dev(div20, "class", "form-row align-items-center");
+    			add_location(div20, file$1, 111, 14, 2982);
+    			attr_dev(div21, "class", "col d-flex justify-content-center");
+    			add_location(div21, file$1, 109, 12, 2917);
+    			attr_dev(div22, "class", "row");
+    			add_location(div22, file$1, 108, 10, 2886);
+    			add_location(label2, file$1, 132, 18, 3874);
     			attr_dev(input2, "type", "color");
-    			add_location(input2, file$1, 115, 18, 3311);
-    			attr_dev(div22, "class", "col-auto");
-    			add_location(div22, file$1, 113, 16, 3223);
-    			add_location(label3, file$1, 118, 18, 3441);
-    			attr_dev(input3, "type", "number");
-    			add_location(input3, file$1, 119, 18, 3488);
+    			add_location(input2, file$1, 133, 18, 3920);
     			attr_dev(div23, "class", "col-auto");
-    			add_location(div23, file$1, 117, 16, 3399);
-    			add_location(label4, file$1, 122, 18, 3620);
-    			attr_dev(input4, "type", "file");
-    			add_location(input4, file$1, 123, 18, 3666);
+    			add_location(div23, file$1, 131, 16, 3832);
+    			add_location(label3, file$1, 136, 18, 4050);
+    			attr_dev(input3, "type", "number");
+    			add_location(input3, file$1, 137, 18, 4097);
     			attr_dev(div24, "class", "col-auto");
-    			add_location(div24, file$1, 121, 16, 3578);
-    			attr_dev(div25, "class", "form-row align-items-center");
-    			add_location(div25, file$1, 112, 14, 3164);
-    			attr_dev(div26, "class", "col d-flex justify-content-center");
-    			add_location(div26, file$1, 110, 12, 3099);
-    			attr_dev(div27, "class", "row");
-    			add_location(div27, file$1, 109, 10, 3068);
-    			attr_dev(div28, "class", "col");
-    			add_location(div28, file$1, 92, 8, 2408);
-    			attr_dev(div29, "class", "row");
-    			add_location(div29, file$1, 91, 6, 2381);
-    			attr_dev(div30, "class", "col");
-    			add_location(div30, file$1, 73, 4, 1896);
-    			attr_dev(div31, "class", "row");
-    			add_location(div31, file$1, 39, 2, 874);
-    			attr_dev(div32, "class", "container");
-    			add_location(div32, file$1, 38, 0, 847);
+    			add_location(div24, file$1, 135, 16, 4008);
+    			add_location(label4, file$1, 140, 18, 4229);
+    			attr_dev(input4, "type", "file");
+    			add_location(input4, file$1, 141, 18, 4275);
+    			attr_dev(div25, "class", "col-auto");
+    			add_location(div25, file$1, 139, 16, 4187);
+    			attr_dev(div26, "class", "form-row align-items-center");
+    			add_location(div26, file$1, 130, 14, 3773);
+    			attr_dev(div27, "class", "col d-flex justify-content-center");
+    			add_location(div27, file$1, 128, 12, 3708);
+    			attr_dev(div28, "class", "row");
+    			add_location(div28, file$1, 127, 10, 3677);
+    			attr_dev(div29, "class", "col");
+    			add_location(div29, file$1, 107, 8, 2857);
+    			attr_dev(div30, "class", "row");
+    			add_location(div30, file$1, 106, 6, 2830);
+    			attr_dev(div31, "class", "col");
+    			add_location(div31, file$1, 88, 4, 2345);
+    			attr_dev(div32, "class", "row");
+    			add_location(div32, file$1, 54, 2, 1323);
+    			attr_dev(div33, "class", "container");
+    			add_location(div33, file$1, 53, 0, 1296);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div32, anchor);
-    			append_dev(div32, div31);
-    			append_dev(div31, div11);
+    			insert_dev(target, div33, anchor);
+    			append_dev(div33, div32);
+    			append_dev(div32, div11);
     			append_dev(div11, div1);
     			append_dev(div1, div0);
     			append_dev(div0, h20);
@@ -3576,61 +3622,65 @@ var app = (function () {
     			append_dev(div5, t7);
     			append_dev(div5, input1);
     			set_input_value(input1, /*brushRadius*/ ctx[1]);
-    			append_dev(div31, t8);
-    			append_dev(div31, div30);
-    			append_dev(div30, div13);
+    			append_dev(div32, t8);
+    			append_dev(div32, div31);
+    			append_dev(div31, div13);
     			append_dev(div13, div12);
     			append_dev(div12, h21);
-    			append_dev(div30, t10);
-    			append_dev(div30, div15);
+    			append_dev(div31, t10);
+    			append_dev(div31, div15);
     			append_dev(div15, div14);
     			mount_component(canvasdraw1, div14, null);
-    			append_dev(div30, t11);
-    			append_dev(div30, hr);
-    			append_dev(div30, t12);
+    			append_dev(div31, t11);
+    			append_dev(div31, hr);
+    			append_dev(div31, t12);
+    			append_dev(div31, div30);
     			append_dev(div30, div29);
-    			append_dev(div29, div28);
-    			append_dev(div28, div21);
+    			append_dev(div29, div22);
+    			append_dev(div22, div21);
     			append_dev(div21, div20);
-    			append_dev(div20, div19);
-    			append_dev(div19, div16);
+    			append_dev(div20, div16);
     			append_dev(div16, button0);
-    			append_dev(div19, t14);
-    			append_dev(div19, div17);
+    			append_dev(div20, t14);
+    			append_dev(div20, div17);
     			append_dev(div17, button1);
-    			append_dev(div19, t16);
-    			append_dev(div19, div18);
+    			append_dev(div20, t16);
+    			append_dev(div20, div18);
     			append_dev(div18, button2);
-    			append_dev(div28, t18);
+    			append_dev(div20, t18);
+    			append_dev(div20, div19);
+    			append_dev(div19, button3);
+    			append_dev(div29, t20);
+    			append_dev(div29, div28);
     			append_dev(div28, div27);
     			append_dev(div27, div26);
-    			append_dev(div26, div25);
-    			append_dev(div25, div22);
-    			append_dev(div22, label2);
-    			append_dev(div22, t20);
-    			append_dev(div22, input2);
+    			append_dev(div26, div23);
+    			append_dev(div23, label2);
+    			append_dev(div23, t22);
+    			append_dev(div23, input2);
     			set_input_value(input2, /*brushColor*/ ctx[0]);
-    			append_dev(div25, t21);
-    			append_dev(div25, div23);
-    			append_dev(div23, label3);
-    			append_dev(div23, t23);
-    			append_dev(div23, input3);
+    			append_dev(div26, t23);
+    			append_dev(div26, div24);
+    			append_dev(div24, label3);
+    			append_dev(div24, t25);
+    			append_dev(div24, input3);
     			set_input_value(input3, /*brushRadius*/ ctx[1]);
-    			append_dev(div25, t24);
-    			append_dev(div25, div24);
-    			append_dev(div24, label4);
-    			append_dev(div24, t26);
-    			append_dev(div24, input4);
+    			append_dev(div26, t26);
+    			append_dev(div26, div25);
+    			append_dev(div25, label4);
+    			append_dev(div25, t28);
+    			append_dev(div25, input4);
     			current = true;
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[7]),
-    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[8]),
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[8]),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[9]),
     					listen_dev(button0, "click", /*clear*/ ctx[5], false, false, false),
     					listen_dev(button1, "click", /*undo*/ ctx[6], false, false, false),
-    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[10]),
-    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[11]),
+    					listen_dev(button3, "click", /*get_image_data*/ ctx[7], false, false, false),
+    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[11]),
+    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[12]),
     					listen_dev(input4, "change", /*setUploadedImage*/ ctx[4], false, false, false)
     				];
 
@@ -3677,9 +3727,9 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div32);
+    			if (detaching) detach_dev(div33);
     			destroy_component(canvasdraw0);
-    			/*canvasdraw1_binding*/ ctx[9](null);
+    			/*canvasdraw1_binding*/ ctx[10](null);
     			destroy_component(canvasdraw1);
     			mounted = false;
     			run_all(dispose);
@@ -3695,6 +3745,15 @@ var app = (function () {
     	});
 
     	return block;
+    }
+
+    function downloadDrawingFile(contentBase64) {
+    	const downloadLink = document.createElement("a");
+    	document.body.appendChild(downloadLink);
+    	downloadLink.href = contentBase64;
+    	downloadLink.target = "_self";
+    	downloadLink.download = "svelte-draw-export-" + new Date();
+    	downloadLink.click();
     }
 
     function instance$1($$self, $$props, $$invalidate) {
@@ -3733,6 +3792,11 @@ var app = (function () {
 
     	function undo() {
     		SDraw.undoDrawings();
+    	}
+
+    	function get_image_data() {
+    		let preparedDS = SDraw.get_image_data();
+    		downloadDrawingFile(preparedDS);
     	}
 
     	const writable_props = [];
@@ -3779,9 +3843,11 @@ var app = (function () {
     		imgBase64,
     		SDraw,
     		setUploadedImage,
+    		downloadDrawingFile,
     		setBgImage,
     		clear,
-    		undo
+    		undo,
+    		get_image_data
     	});
 
     	$$self.$inject_state = $$props => {
@@ -3804,6 +3870,7 @@ var app = (function () {
     		setUploadedImage,
     		clear,
     		undo,
+    		get_image_data,
     		input0_input_handler,
     		input1_input_handler,
     		canvasdraw1_binding,
