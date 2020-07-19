@@ -130,15 +130,15 @@
   });
 
 
-  // afterUpdate(() => {
+  afterUpdate(() => {
     // // Set new lazyRadius values
     // chainLength = lazyRadius * window.devicePixelRatio;
     // lazy.setRadius(lazyRadius * window.devicePixelRatio);
     // loadSaveData(saveData);
     // // Signal loop function that values changed
     // valuesChanged = true;
-    // drawImage();
-  // });
+    drawImage();
+  });
 
 
 
