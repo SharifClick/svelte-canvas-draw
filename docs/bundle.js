@@ -3319,8 +3319,8 @@ var app = (function () {
     const file$1 = "dev\\App.svelte";
 
     function create_fragment$1(ctx) {
-    	let div33;
-    	let div32;
+    	let div31;
+    	let div30;
     	let div11;
     	let div1;
     	let div0;
@@ -3345,7 +3345,7 @@ var app = (function () {
     	let t7;
     	let input1;
     	let t8;
-    	let div31;
+    	let div29;
     	let div13;
     	let div12;
     	let h21;
@@ -3356,39 +3356,33 @@ var app = (function () {
     	let t11;
     	let hr;
     	let t12;
-    	let div30;
-    	let div29;
-    	let div22;
-    	let div21;
+    	let div28;
+    	let div27;
     	let div20;
+    	let div19;
+    	let div18;
     	let div16;
     	let button0;
     	let t14;
     	let div17;
     	let button1;
     	let t16;
-    	let div18;
-    	let button2;
-    	let t18;
-    	let div19;
-    	let button3;
-    	let t20;
-    	let div28;
-    	let div27;
     	let div26;
-    	let div23;
-    	let label2;
-    	let t22;
-    	let input2;
-    	let t23;
-    	let div24;
-    	let label3;
-    	let t25;
-    	let input3;
-    	let t26;
     	let div25;
+    	let div24;
+    	let div21;
+    	let label2;
+    	let t18;
+    	let input2;
+    	let t19;
+    	let div22;
+    	let label3;
+    	let t21;
+    	let input3;
+    	let t22;
+    	let div23;
     	let label4;
-    	let t28;
+    	let t24;
     	let input4;
     	let current;
     	let mounted;
@@ -3410,12 +3404,12 @@ var app = (function () {
     	};
 
     	canvasdraw1 = new CanvasDraw({ props: canvasdraw1_props, $$inline: true });
-    	/*canvasdraw1_binding*/ ctx[10](canvasdraw1);
+    	/*canvasdraw1_binding*/ ctx[9](canvasdraw1);
 
     	const block = {
     		c: function create() {
-    			div33 = element("div");
-    			div32 = element("div");
+    			div31 = element("div");
+    			div30 = element("div");
     			div11 = element("div");
     			div1 = element("div");
     			div0 = element("div");
@@ -3443,7 +3437,7 @@ var app = (function () {
     			t7 = space();
     			input1 = element("input");
     			t8 = space();
-    			div31 = element("div");
+    			div29 = element("div");
     			div13 = element("div");
     			div12 = element("div");
     			h21 = element("h2");
@@ -3455,46 +3449,38 @@ var app = (function () {
     			t11 = space();
     			hr = element("hr");
     			t12 = space();
-    			div30 = element("div");
-    			div29 = element("div");
-    			div22 = element("div");
-    			div21 = element("div");
+    			div28 = element("div");
+    			div27 = element("div");
     			div20 = element("div");
+    			div19 = element("div");
+    			div18 = element("div");
     			div16 = element("div");
     			button0 = element("button");
     			button0.textContent = "Clear";
     			t14 = space();
     			div17 = element("div");
     			button1 = element("button");
-    			button1.textContent = "Undo";
+    			button1.textContent = "Download";
     			t16 = space();
-    			div18 = element("div");
-    			button2 = element("button");
-    			button2.textContent = "Save";
-    			t18 = space();
-    			div19 = element("div");
-    			button3 = element("button");
-    			button3.textContent = "Download";
-    			t20 = space();
-    			div28 = element("div");
-    			div27 = element("div");
     			div26 = element("div");
-    			div23 = element("div");
+    			div25 = element("div");
+    			div24 = element("div");
+    			div21 = element("div");
     			label2 = element("label");
     			label2.textContent = "Brush Color";
-    			t22 = space();
+    			t18 = space();
     			input2 = element("input");
-    			t23 = space();
-    			div24 = element("div");
+    			t19 = space();
+    			div22 = element("div");
     			label3 = element("label");
     			label3.textContent = "Brush Radius";
-    			t25 = space();
+    			t21 = space();
     			input3 = element("input");
-    			t26 = space();
-    			div25 = element("div");
+    			t22 = space();
+    			div23 = element("div");
     			label4 = element("label");
-    			label4.textContent = "File Upload";
-    			t28 = space();
+    			label4.textContent = "Upload an image as drawing background";
+    			t24 = space();
     			input4 = element("input");
     			add_location(h20, file$1, 58, 10, 1458);
     			attr_dev(div0, "class", "col d-flex justify-content-center");
@@ -3542,62 +3528,54 @@ var app = (function () {
     			attr_dev(div16, "class", "col-auto");
     			add_location(div16, file$1, 112, 16, 3042);
     			attr_dev(button1, "class", "btn btn-primary");
-    			add_location(button1, file$1, 116, 18, 3232);
+    			add_location(button1, file$1, 122, 18, 3516);
     			attr_dev(div17, "class", "col-auto");
-    			add_location(div17, file$1, 115, 16, 3190);
-    			attr_dev(button2, "class", "btn btn-primary");
-    			add_location(button2, file$1, 119, 18, 3377);
-    			attr_dev(div18, "class", "col-auto");
-    			add_location(div18, file$1, 118, 16, 3335);
-    			attr_dev(button3, "class", "btn btn-primary");
-    			add_location(button3, file$1, 122, 18, 3507);
-    			attr_dev(div19, "class", "col-auto");
-    			add_location(div19, file$1, 121, 16, 3464);
-    			attr_dev(div20, "class", "form-row align-items-center");
-    			add_location(div20, file$1, 111, 14, 2983);
-    			attr_dev(div21, "class", "col d-flex justify-content-center");
-    			add_location(div21, file$1, 109, 12, 2918);
-    			attr_dev(div22, "class", "row");
-    			add_location(div22, file$1, 108, 10, 2887);
-    			add_location(label2, file$1, 132, 18, 3875);
+    			add_location(div17, file$1, 121, 16, 3473);
+    			attr_dev(div18, "class", "form-row align-items-center");
+    			add_location(div18, file$1, 111, 14, 2983);
+    			attr_dev(div19, "class", "col d-flex justify-content-center");
+    			add_location(div19, file$1, 109, 12, 2918);
+    			attr_dev(div20, "class", "row");
+    			add_location(div20, file$1, 108, 10, 2887);
+    			add_location(label2, file$1, 132, 18, 3884);
     			attr_dev(input2, "type", "color");
-    			add_location(input2, file$1, 133, 18, 3921);
-    			attr_dev(div23, "class", "col-auto");
-    			add_location(div23, file$1, 131, 16, 3833);
-    			add_location(label3, file$1, 136, 18, 4051);
+    			add_location(input2, file$1, 133, 18, 3930);
+    			attr_dev(div21, "class", "col-auto");
+    			add_location(div21, file$1, 131, 16, 3842);
+    			add_location(label3, file$1, 136, 18, 4060);
     			attr_dev(input3, "type", "number");
-    			add_location(input3, file$1, 137, 18, 4098);
-    			attr_dev(div24, "class", "col-auto");
-    			add_location(div24, file$1, 135, 16, 4009);
-    			add_location(label4, file$1, 140, 18, 4230);
+    			add_location(input3, file$1, 137, 18, 4107);
+    			attr_dev(div22, "class", "col-auto");
+    			add_location(div22, file$1, 135, 16, 4018);
+    			add_location(label4, file$1, 140, 18, 4239);
     			attr_dev(input4, "type", "file");
-    			add_location(input4, file$1, 141, 18, 4276);
-    			attr_dev(div25, "class", "col-auto");
-    			add_location(div25, file$1, 139, 16, 4188);
-    			attr_dev(div26, "class", "form-row align-items-center");
-    			add_location(div26, file$1, 130, 14, 3774);
-    			attr_dev(div27, "class", "col d-flex justify-content-center");
-    			add_location(div27, file$1, 128, 12, 3709);
+    			add_location(input4, file$1, 141, 18, 4311);
+    			attr_dev(div23, "class", "col-auto");
+    			add_location(div23, file$1, 139, 16, 4197);
+    			attr_dev(div24, "class", "form-row align-items-center");
+    			add_location(div24, file$1, 130, 14, 3783);
+    			attr_dev(div25, "class", "col d-flex justify-content-center");
+    			add_location(div25, file$1, 128, 12, 3718);
+    			attr_dev(div26, "class", "row");
+    			add_location(div26, file$1, 127, 10, 3687);
+    			attr_dev(div27, "class", "col");
+    			add_location(div27, file$1, 107, 8, 2858);
     			attr_dev(div28, "class", "row");
-    			add_location(div28, file$1, 127, 10, 3678);
+    			add_location(div28, file$1, 106, 6, 2831);
     			attr_dev(div29, "class", "col");
-    			add_location(div29, file$1, 107, 8, 2858);
+    			add_location(div29, file$1, 88, 4, 2346);
     			attr_dev(div30, "class", "row");
-    			add_location(div30, file$1, 106, 6, 2831);
-    			attr_dev(div31, "class", "col");
-    			add_location(div31, file$1, 88, 4, 2346);
-    			attr_dev(div32, "class", "row");
-    			add_location(div32, file$1, 54, 2, 1324);
-    			attr_dev(div33, "class", "container");
-    			add_location(div33, file$1, 53, 0, 1297);
+    			add_location(div30, file$1, 54, 2, 1324);
+    			attr_dev(div31, "class", "container");
+    			add_location(div31, file$1, 53, 0, 1297);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div33, anchor);
-    			append_dev(div33, div32);
-    			append_dev(div32, div11);
+    			insert_dev(target, div31, anchor);
+    			append_dev(div31, div30);
+    			append_dev(div30, div11);
     			append_dev(div11, div1);
     			append_dev(div1, div0);
     			append_dev(div0, h20);
@@ -3622,65 +3600,58 @@ var app = (function () {
     			append_dev(div5, t7);
     			append_dev(div5, input1);
     			set_input_value(input1, /*brushRadius*/ ctx[1]);
-    			append_dev(div32, t8);
-    			append_dev(div32, div31);
-    			append_dev(div31, div13);
+    			append_dev(div30, t8);
+    			append_dev(div30, div29);
+    			append_dev(div29, div13);
     			append_dev(div13, div12);
     			append_dev(div12, h21);
-    			append_dev(div31, t10);
-    			append_dev(div31, div15);
+    			append_dev(div29, t10);
+    			append_dev(div29, div15);
     			append_dev(div15, div14);
     			mount_component(canvasdraw1, div14, null);
-    			append_dev(div31, t11);
-    			append_dev(div31, hr);
-    			append_dev(div31, t12);
-    			append_dev(div31, div30);
-    			append_dev(div30, div29);
-    			append_dev(div29, div22);
-    			append_dev(div22, div21);
-    			append_dev(div21, div20);
-    			append_dev(div20, div16);
-    			append_dev(div16, button0);
-    			append_dev(div20, t14);
-    			append_dev(div20, div17);
-    			append_dev(div17, button1);
-    			append_dev(div20, t16);
-    			append_dev(div20, div18);
-    			append_dev(div18, button2);
-    			append_dev(div20, t18);
-    			append_dev(div20, div19);
-    			append_dev(div19, button3);
-    			append_dev(div29, t20);
+    			append_dev(div29, t11);
+    			append_dev(div29, hr);
+    			append_dev(div29, t12);
     			append_dev(div29, div28);
     			append_dev(div28, div27);
+    			append_dev(div27, div20);
+    			append_dev(div20, div19);
+    			append_dev(div19, div18);
+    			append_dev(div18, div16);
+    			append_dev(div16, button0);
+    			append_dev(div18, t14);
+    			append_dev(div18, div17);
+    			append_dev(div17, button1);
+    			append_dev(div27, t16);
     			append_dev(div27, div26);
-    			append_dev(div26, div23);
-    			append_dev(div23, label2);
-    			append_dev(div23, t22);
-    			append_dev(div23, input2);
-    			set_input_value(input2, /*brushColor*/ ctx[0]);
-    			append_dev(div26, t23);
-    			append_dev(div26, div24);
-    			append_dev(div24, label3);
-    			append_dev(div24, t25);
-    			append_dev(div24, input3);
-    			set_input_value(input3, /*brushRadius*/ ctx[1]);
-    			append_dev(div26, t26);
     			append_dev(div26, div25);
-    			append_dev(div25, label4);
-    			append_dev(div25, t28);
-    			append_dev(div25, input4);
+    			append_dev(div25, div24);
+    			append_dev(div24, div21);
+    			append_dev(div21, label2);
+    			append_dev(div21, t18);
+    			append_dev(div21, input2);
+    			set_input_value(input2, /*brushColor*/ ctx[0]);
+    			append_dev(div24, t19);
+    			append_dev(div24, div22);
+    			append_dev(div22, label3);
+    			append_dev(div22, t21);
+    			append_dev(div22, input3);
+    			set_input_value(input3, /*brushRadius*/ ctx[1]);
+    			append_dev(div24, t22);
+    			append_dev(div24, div23);
+    			append_dev(div23, label4);
+    			append_dev(div23, t24);
+    			append_dev(div23, input4);
     			current = true;
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[8]),
-    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[9]),
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[7]),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[8]),
     					listen_dev(button0, "click", /*clear*/ ctx[5], false, false, false),
-    					listen_dev(button1, "click", /*undo*/ ctx[6], false, false, false),
-    					listen_dev(button3, "click", /*get_image_data*/ ctx[7], false, false, false),
-    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[11]),
-    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[12]),
+    					listen_dev(button1, "click", /*get_image_data*/ ctx[6], false, false, false),
+    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[10]),
+    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[11]),
     					listen_dev(input4, "change", /*setUploadedImage*/ ctx[4], false, false, false)
     				];
 
@@ -3727,9 +3698,9 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div33);
+    			if (detaching) detach_dev(div31);
     			destroy_component(canvasdraw0);
-    			/*canvasdraw1_binding*/ ctx[10](null);
+    			/*canvasdraw1_binding*/ ctx[9](null);
     			destroy_component(canvasdraw1);
     			mounted = false;
     			run_all(dispose);
@@ -3869,7 +3840,6 @@ var app = (function () {
     		SDraw,
     		setUploadedImage,
     		clear,
-    		undo,
     		get_image_data,
     		input0_input_handler,
     		input1_input_handler,

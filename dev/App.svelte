@@ -113,12 +113,12 @@
                 <div class="col-auto">
                   <button  class="btn btn-primary" on:click={clear}>Clear</button>
                 </div>
-                <div class="col-auto">
+                <!-- <div class="col-auto">
                   <button class="btn btn-primary" on:click={undo}>Undo</button>
                 </div>
                 <div class="col-auto">
                   <button class="btn btn-primary">Save</button>
-                </div>
+                </div> -->
                 <div class="col-auto" >
                   <button class="btn btn-primary" on:click={get_image_data}>Download</button>
                 </div>
@@ -138,7 +138,7 @@
                   <input type="number" bind:value={brushRadius} />
                 </div>
                 <div class="col-auto">
-                  <label>File Upload</label>
+                  <label>Upload an image as drawing background</label>
                   <input type="file" on:change={setUploadedImage} />
                 </div>
               </div>
