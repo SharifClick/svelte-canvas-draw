@@ -533,6 +533,13 @@
     ctx.fill();
   };
 
+  export function clearDrawings(){
+    clear()
+  }
+
+  export function undoDrawings(){
+    undo()
+  }
 
 
 </script>

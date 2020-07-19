@@ -4,6 +4,7 @@
   let brushRadius = 10;
   let bgImage = "./images/cat.png";
   let imgBase64 = null;
+  let SDraw = null;
 
   function setUploadedImage(e) {
     // console.log(fileUploader.files)
@@ -24,6 +25,14 @@
 
   function setBgImage() {
     bgImage = imgBase64;
+  }
+
+  function clear() {
+    SDraw.clearDrawings();
+  }
+
+  function undo() {
+    SDraw.undoDrawings();
   }
 </script>
 
@@ -72,6 +81,7 @@
       <div class="row">
         <div class="col d-flex justify-content-center">
           <CanvasDraw
+            bind:this={SDraw}
             {brushColor}
             {brushRadius}
             imgSrc={bgImage}
@@ -86,10 +96,10 @@
 
               <div class="form-row align-items-center">
                 <div class="col-auto">
-                  <button  class="btn btn-primary">Clear</button>
+                  <button  class="btn btn-primary" on:click={clear}>Clear</button>
                 </div>
                 <div class="col-auto">
-                  <button class="btn btn-primary">Undo</button>
+                  <button class="btn btn-primary" on:click={undo}>Undo</button>
                 </div>
                 <div class="col-auto">
                   <button class="btn btn-primary">Save</button>
