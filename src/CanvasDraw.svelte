@@ -541,6 +541,28 @@
     undo()
   }
 
+   export function get_image_data(){
+     return prepareImageData()
+  }
+
+
+  function prepareImageData() {
+    var newCanvas = document.createElement('canvas'),
+        _ctx = newCanvas.getContext('2d'),
+        width = canvasWidth,
+        height = canvasHeight;
+
+    newCanvas.width = width;
+    newCanvas.height = height;
+
+    [ctx.grid.canvas,ctx.drawing.canvas].forEach(function(n) {
+        _ctx.beginPath();
+        _ctx.drawImage(n, 0, 0, width, height);
+    });
+
+    return newCanvas.toDataURL();
+  };
+
 
 </script>
 <style>

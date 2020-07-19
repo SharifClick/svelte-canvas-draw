@@ -23,6 +23,16 @@
     }
   }
 
+  function downloadDrawingFile(contentBase64) {
+    const downloadLink = document.createElement('a');
+    document.body.appendChild(downloadLink);
+
+    downloadLink.href = contentBase64;
+    downloadLink.target = '_self';
+    downloadLink.download = 'svelte-draw-export-'+(new Date());
+    downloadLink.click();
+  }
+
   function setBgImage() {
     bgImage = imgBase64;
   }
@@ -33,6 +43,11 @@
 
   function undo() {
     SDraw.undoDrawings();
+  }
+
+  function get_image_data() {
+    let preparedDS = SDraw.get_image_data();
+    downloadDrawingFile(preparedDS);
   }
 </script>
 
@@ -103,6 +118,9 @@
                 </div>
                 <div class="col-auto">
                   <button class="btn btn-primary">Save</button>
+                </div>
+                <div class="col-auto" >
+                  <button class="btn btn-primary" on:click={get_image_data}>Download</button>
                 </div>
               </div>
             </div>
