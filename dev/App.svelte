@@ -29,7 +29,7 @@
 
     downloadLink.href = contentBase64;
     downloadLink.target = '_self';
-    downloadLink.download = 'svelte-draw-export-'+(new Date());
+    downloadLink.download = 'svelte-draw-export-'+(+new Date());
     downloadLink.click();
   }
 
