@@ -78,9 +78,25 @@
             canvasWidth="640" />
         </div>
       </div>
-
+      <hr>
       <div class="row">
         <div class="col">
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+
+              <div class="form-row align-items-center">
+                <div class="col-auto">
+                  <button  class="btn btn-primary">Clear</button>
+                </div>
+                <div class="col-auto">
+                  <button class="btn btn-primary">Undo</button>
+                </div>
+                <div class="col-auto">
+                  <button class="btn btn-primary">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="row">
             <div class="col d-flex justify-content-center">
 
